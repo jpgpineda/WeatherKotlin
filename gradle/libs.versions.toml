@@ -12,6 +12,8 @@ constraintlayout = "2.1.4"
 navigationFragmentKtx = "2.8.5"
 navigationUiKtx = "2.8.5"
 lottie = "4.2.2"
+kotlin-serialization-json = "1.7.0"
+gson = "2.10.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -25,6 +27,8 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie"}
+kotlin-serialization-json = { group="org.jetbrains.kotlinx", name="kotlinx-serialization-json", version.ref="kotlin-serialization-json"}
+gson = { group ="com.google.code.gson", name="gson", version.ref="gson"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
