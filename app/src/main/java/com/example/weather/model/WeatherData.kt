@@ -8,14 +8,14 @@ data class WeatherData(
 )
 
 data class Current(
-    @SerializedName("temp_c") val temp: Int,
+    @SerializedName("temp_c") val temp: Double,
     val condition: Condition,
     @SerializedName("is_day") val isDay: Int,
     val humidity: Int,
     @SerializedName("last_updated") val lastUpdated: String,
     val cloud: Int,
-    @SerializedName("wind_mph") val windSpeed: Int,
-    @SerializedName("feelslike_c") val feelsLike: Int
+    @SerializedName("wind_mph") val windSpeed: Double,
+    @SerializedName("feelslike_c") val feelsLike: Double
 )
 
 data class Location(

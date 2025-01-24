@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.weather.utils.FragmentCommunicator
 import com.example.weather.databinding.FragmentFirstBinding
+import com.example.weather.model.WeatherData
 import com.example.weather.viewModel.WeatherViewModel
 
 class WeatherFragment : Fragment() {
@@ -23,11 +24,31 @@ class WeatherFragment : Fragment() {
     ): View {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         communicator = requireActivity() as FragmentCommunicator
-        binding.menuButton.setOnClickListener {
-            communicator.manageLoader(true)
-        }
-
+        setupObservers()
+        setupView()
         return binding.root
+    }
+
+    private fun setupObservers() {
+        viewModel.weatherInfo.observe(viewLifecycleOwner) { weatherInfo ->
+            updateUI(weatherInfo)
+        }
+        viewModel.loaderState.observe(viewLifecycleOwner) { showLoader ->
+            communicator.manageLoader(showLoader)
+        }
+    }
+
+    private fun setupView() {
+        viewModel.fetchWeatherInfo("19.3241552,-99.1872086")
+    }
+
+    private fun updateUI(weatherInfo: WeatherData) {
+        binding.cityTextView.text = weatherInfo.location.region
+        binding.localTimeTextView.text = weatherInfo.location.localTime
+        binding.temperatureTextView.text = weatherInfo.current.temp.toString() + " °C"
+        binding.humidityTextView.text = weatherInfo.current.humidity.toString() + " %"
+        binding.windSpeedTextView.text = weatherInfo.current.windSpeed.toString() + " kmp"
+        binding.feelsLikeTextView.text = weatherInfo.current.feelsLike.toString() + " °C"
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

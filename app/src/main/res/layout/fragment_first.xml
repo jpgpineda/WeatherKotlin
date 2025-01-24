@@ -23,6 +23,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="TextView"
+        android:textStyle="bold"
+        android:textSize="32sp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,14 +53,15 @@
                 android:layout_marginTop="53dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="53dp"
-                android:text="TextView"
+                android:text="Humedad"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/dayScheduleTextView"
+                android:id="@+id/humidityTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"
                 android:layout_marginStart="8dp"
@@ -84,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#E91E63">
+            android:background="@color/white">
 
             <TextView
                 android:id="@+id/textView2"
@@ -94,7 +97,8 @@
                 android:layout_marginTop="52dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="52dp"
-                android:text="TextView"
+                android:text="Velocidad del viento"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -113,7 +117,7 @@
                 app:srcCompat="@drawable/baseline_account_balance_24" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/windSpeedTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -129,7 +133,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#3F51B5">
+            android:background="@color/white">
 
             <TextView
                 android:id="@+id/textView4"
@@ -139,7 +143,8 @@
                 android:layout_marginTop="52dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="52dp"
-                android:text="TextView"
+                android:text="Sensacion termica"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -158,7 +163,7 @@
                 app:srcCompat="@drawable/baseline_account_balance_24" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/feelsLikeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -172,7 +177,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/localTimeTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -185,7 +190,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cityTextView" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/greetingsTextView"
         android:layout_width="0dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
@@ -198,29 +203,31 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/temperatureTextView"
         android:layout_width="0dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
+        android:textAlignment="center"
+        android:textSize="32sp"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus ut libero tempus, id lobortis mauris eleifend. Duis hendrerit tempor porttitor. Aenean semper facilisis aliquet. Mauris varius dapibus odio nec fringilla. In hac habitasse platea dictumst. Nullam molestie ligula arcu, in pulvinar ex facilisis sit amet. Quisque eget lorem quis nisl fringilla placerat. Integer auctor tortor neque, id faucibus nisi congue vel. Donec ac auctor lorem, id varius tellus. Aenean malesuada ipsum et neque convallis, nec euismod eros egestas. Vestibulum vestibulum vulputate ligula vestibulum sodales.  Praesent est nibh, sodales sed orci id, viverra ultrices nisi. Nullam ac vehicula enim. Donec tempor augue est, eget euismod sapien facilisis ac. Nam molestie a neque ac bibendum. Proin ac orci eget turpis sagittis iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris elementum purus lacinia lorem lobortis, quis vulputate metus consectetur. Sed sit amet elit rutrum, fermentum tortor eget, fermentum neque. Proin vitae augue luctus, vulputate ex vitae, consectetur neque.  Morbi et iaculis augue. Sed porttitor erat nisl, eu consectetur tellus elementum at. Curabitur id purus elit. Maecenas eget massa varius turpis maximus commodo. Vivamus vel magna viverra, tristique velit ac, faucibus sem. Duis vel lacinia mauris. Maecenas eget sagittis neque. Sed euismod, tortor a vehicula varius, neque mi mattis orci, non viverra mi dolor posuere quam. Cras luctus ligula sit amet tortor aliquam, a aliquet enim molestie. Aliquam vel urna id diam ornare consequat vitae non odio. Ut faucibus enim ipsum, vitae accumsan enim pellentesque egestas. Nulla lectus est, pretium ac purus quis, fermentum bibendum eros. Ut non sodales nulla.  Pellentesque luctus consectetur dui, a interdum tortor hendrerit eu. Donec blandit odio id convallis lobortis. Etiam ultricies leo in sem hendrerit iaculis. Fusce tristique justo imperdiet arcu vulputate placerat. Duis eget risus sed ipsum fringilla pretium non pharetra magna. Donec quis purus risus. Praesent a tellus iaculis, vulputate enim vitae, laoreet enim.  Nam mollis molestie neque ornare feugiat. Nullam viverra nunc nec est fermentum elementum. Aenean vel commodo lacus, nec fermentum tellus. Praesent tincidunt enim a mattis fermentum. In varius eget magna in congue. Donec quis laoreet orci. Fusce blandit laoreet diam nec ullamcorper. In sed vulputate ante, non dictum mauris. Sed ornare odio tortor, in ultricies enim eleifend et. In hac habitasse platea dictumst. Etiam et sodales nibh. Aliquam lectus libero, rutrum at turpis sit amet, facilisis feugiat nibh. Etiam fermentum, metus nec tincidunt ultricies, erat sem blandit libero, id feugiat neque mauris vel ex. Quisque id dui eget nulla dictum pulvinar in quis felis. Suspendisse auctor eros sit amet diam laoreet ullamcorper."
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintBottom_toTopOf="@+id/greetingsTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/weatherIconImageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintBottom_toTopOf="@+id/temperatureTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/localTimeTextView"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
