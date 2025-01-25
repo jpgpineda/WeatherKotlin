@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.weather.utils.FragmentCommunicator
-import com.example.weather.databinding.FragmentFirstBinding
+import com.example.weather.databinding.FragmentWeatherBinding
 import com.example.weather.model.WeatherData
 import com.example.weather.viewModel.WeatherViewModel
 
 class WeatherFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: FragmentWeatherBinding? = null
     private val binding get() = _binding!!
     private lateinit var communicator: FragmentCommunicator
     private val viewModel by viewModels<WeatherViewModel>()
@@ -22,7 +22,7 @@ class WeatherFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentWeatherBinding.inflate(inflater, container, false)
         communicator = requireActivity() as FragmentCommunicator
         setupObservers()
         setupView()
@@ -49,11 +49,6 @@ class WeatherFragment : Fragment() {
         binding.humidityTextView.text = weatherInfo.current.humidity.toString() + " %"
         binding.windSpeedTextView.text = weatherInfo.current.windSpeed.toString() + " kmp"
         binding.feelsLikeTextView.text = weatherInfo.current.feelsLike.toString() + " °C"
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
     }
 
     override fun onDestroyView() {
