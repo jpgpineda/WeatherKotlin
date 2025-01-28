@@ -4,7 +4,23 @@ import com.google.gson.annotations.SerializedName
 
 data class WeatherData(
     val location: Location,
-    val current: Current
+    val current: Current,
+    val forecast: Forecast?
+)
+
+data class Forecast(
+    val forecastday: List<ForecastDay>
+)
+
+data class ForecastDay(
+    val date: String,
+    val day: Day
+)
+
+data class Day(
+    @SerializedName("maxtemp_c") val maxTemp: Double,
+    @SerializedName("mintemp_c") val minTemp: Double,
+    val condition: Condition
 )
 
 data class Current(

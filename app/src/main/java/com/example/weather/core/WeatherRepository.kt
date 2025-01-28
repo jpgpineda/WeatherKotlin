@@ -12,4 +12,13 @@ class WeatherRepository {
 
         return response.body()
     }
+
+    suspend fun fetchForecastInfo(coordinates: String): WeatherData? {
+        val response = retrofit.getForecastInfo("73c648b0d07f4fbc9c3150707252101",
+            coordinates,
+            days = 7)
+        Log.i("RESPONSE", response.body().toString())
+
+        return response.body()
+    }
 }

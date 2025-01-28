@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.weather.R
 import com.example.weather.utils.FragmentCommunicator
 import com.example.weather.databinding.FragmentWeatherBinding
 import com.example.weather.model.WeatherData
@@ -40,6 +42,9 @@ class WeatherFragment : Fragment() {
 
     private fun setupView() {
         viewModel.fetchWeatherInfo("19.3241552,-99.1872086")
+        binding.menuButton.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        }
     }
 
     private fun updateUI(weatherInfo: WeatherData) {

@@ -11,4 +11,11 @@ interface WeatherAPI {
         @Query("key") apiKey: String,
         @Query("q") coordinates: String
     ): Response<WeatherData>
+
+    @GET("v1/forecast.json")
+    suspend fun getForecastInfo(
+        @Query("key") apiKey: String,
+        @Query("q") coordinates: String,
+        @Query("days") days: Int
+    ): Response<WeatherData>
 }
