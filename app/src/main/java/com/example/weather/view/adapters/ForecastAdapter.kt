@@ -11,7 +11,7 @@ import com.example.weather.databinding.ForecastItemBinding
 import com.example.weather.model.ForecastDay
 
 class ForecastAdapter(
-    var forecast: MutableList<ForecastDay>
+    private val forecast: MutableList<ForecastDay>
 ): RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
     private lateinit var context: Context
 
@@ -28,6 +28,13 @@ class ForecastAdapter(
             }
         }
     }
+
+
+    fun add(forecastItems: List<ForecastDay>) {
+        forecast.addAll(forecastItems)
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ForecastAdapter.ViewHolder {
         context = parent.context
         val view = LayoutInflater.from(context)

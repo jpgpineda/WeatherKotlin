@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.weather.databinding.FragmentLocationBinding
 import com.example.weather.model.ForecastDay
 import com.example.weather.utils.FragmentCommunicator
@@ -38,6 +39,10 @@ class ForecastFragment : Fragment() {
         forecastAdapter = ForecastAdapter(
             mutableListOf()
         )
+        binding.forecastRecycler.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = forecastAdapter
+        }
     }
 
     private fun setupObservers() {
@@ -50,8 +55,7 @@ class ForecastFragment : Fragment() {
     }
 
     private fun updateUI(forecast: List<ForecastDay>) {
-        forecastAdapter.forecast.addAll(forecast)
-        forecastAdapter.notifyDataSetChanged()
+        forecastAdapter.add(forecast)
     }
 
     override fun onDestroyView() {
