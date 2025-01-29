@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.weather.R
 import com.example.weather.databinding.ForecastItemBinding
 import com.example.weather.model.ForecastDay
@@ -26,6 +27,12 @@ class ForecastAdapter(
             binding.containerView.setOnClickListener {
                 Log.i("MENSAJE", "El clima estara: ${item.day.condition.text}")
             }
+
+            Glide.with(itemView.context)
+                .load(item.day.condition.icon)
+                .placeholder(R.drawable.weather_ic)
+                .error(R.drawable.broke_ic)
+                .into(binding.weatherIcon)
         }
     }
 
